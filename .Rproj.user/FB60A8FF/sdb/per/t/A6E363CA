@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n# \n# http://www.rstudio.com/shiny/\n#\n\nlibrary(shiny)\n\nrequire(quanteda)\nrequire(stringi)\nrequire(data.table)\nrequire(dplyr)\nrequire(Matrix)\nrequire(wordcloud)\n\nsource(\"prediction.R\")\n\n\nshinyServer(function(input, output) {\n        \n        output$plot <- renderPlot({\n                wordcloud(satzanfang$pred, freq = satzanfang$score,\n                          colors = brewer.pal(8, \"Dark2\"))\n        })\n        \n        table <- reactive({\n                # Change when the \"update\" button is pressed...\n                input$update\n                isolate(wortwahl(input$phrase, show = 20))\n        })\n   \n        wordcloud_rep <- repeatable(wordcloud)\n        \n        output$topword <- renderText({\n                \n                head(table()$pred, 1)\n        })\n        \n        output$plot <- renderPlot({\n\n                wordcloud_rep(table()$pred, freq = table()$score,\n                              colors=brewer.pal(8, \"Dark2\"))\n        })\n        \n        \n  \n})\n",
+    "created" : 1451571806016.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2322357372",
+    "id" : "A6E363CA",
+    "lastKnownWriteTime" : 1452959043,
+    "path" : "~/Weiterbildungen/DataScience/Capstone/shiny/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

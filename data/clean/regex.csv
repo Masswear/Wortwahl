@@ -1,0 +1,16 @@
+pattern;replacement
+^;satzanfang 
+$; 
+\s\s+; 
+_+;
+^\d+-\d+;bereich
+ \d+-\d+; bereich
+^\d+-\w+;vorzahl
+ \d+-\w+; vorzahl
+\d+(st|nd|rd|th);aufzaehlung
+\d{2,4}s;jahreszahl
+ (1|2)\d{3} ; jahreszahl 
+\d+(am|pm);zeitangabe
+\d+;anderezahl
+w{3}(\..+\.\w+)+;internetadresse
+([a-z\d])\1\1+;\1

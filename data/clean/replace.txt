@@ -1,0 +1,12 @@
+satzanfang
+bereich
+bereich
+vorzahl
+vorzahl
+aufzaehlung
+jahreszahl
+jahreszahl
+zeitangabe
+anderezahl
+internetadresse
+unbekannteswort
