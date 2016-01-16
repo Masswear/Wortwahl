@@ -1,0 +1,17 @@
+{
+    "contents" : "library(shiny)\n\nshinyUI(fluidPage(\n        \n        title = \"Wortwahl\",\n        \n        fluidRow(\n                column(6, offset = 3,\n                       #instructions\n                       #textbox to enter text\n                       h2(\"Wortwahl\"),\n                       h4(\"Enter a text and hit \\\"Predict\\\"\"),\n                       textInput(\"phrase\", \"Input phrase:\", width = \"600px\")\n\n                )\n                ),\n        fluidRow(\n                column(1, offset = 3,\n                actionButton(\"update\", \"Predict\")),\n                \n                column(2,\n                       h4(\"The next word will be:\")\n                ),\n                \n                column(3, \n                       h4(textOutput(\"topword\"), style = \"color:green\")\n                       )\n        ),\n                \n                \n        hr(),        \n        \n        fluidRow(\n                column(6, offset = 3,\n                       \n                       h4(\"This is a wordcloud with the top predictions:\", align = \"center\"),\n                       #wordcloud\n                       plotOutput(\"plot\")\n                )\n                ),\n        \n        \n        \n        \n        \n        hr(),\n        \n        fluidRow(\n                column(4,\n                #instructions\n                h4(\"Instructions\")\n                ),\n                \n                column(4, align = \"center\",\n                #wordcloud\n                h4(\"v0.2\")\n                ),\n                \n                column(4,\n                #credits\n                h4(\"Credits\")\n                )\n        )\n))\n",
+    "created" : 1452758783398.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "875654770",
+    "id" : "2C3379FD",
+    "lastKnownWriteTime" : 1452959146,
+    "path" : "~/Weiterbildungen/DataScience/Capstone/shiny/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
